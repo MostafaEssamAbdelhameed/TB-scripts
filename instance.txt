@@ -1,0 +1,11 @@
+ Up_Dn_Counter DUT (
+		.IN(IN_tb),
+		.Load(Load_tb),
+		.Up(Up_tb),
+		.Down(Down_tb),
+		.CLK(CLK_tb),
+		.rst(rst_tb),
+		.High(High_tb),
+		.Counter(Counter_tb),
+		.Low(Low_tb)
+		);
