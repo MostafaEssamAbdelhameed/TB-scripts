@@ -1,4 +1,6 @@
-module Up_Dn_Counter_tb ()
+`timescale 1ns / 1ps
+
+module ClkDiv_tb ();
 
 /////////////////////////////////////////////////////
 //////////////////clk_generator//////////////////////
@@ -12,25 +14,18 @@ always #(clk_period/2) clk_tb = ~clk_tb;
 ///////////////Decleration & Instances///////////////
 /////////////////////////////////////////////////////
 
-wire [3:0]	IN_tb; 
-wire		Load_tb;
-wire		Up_tb;
-wire		Down_tb;
-wire		CLK_tb;
-reg			High_tb;
-reg	[3:0]	Counter_tb; 
-reg			Low_tb;
+reg		i_ref_clk_tb;
+reg		i_rst_n_tb;
+reg		i_clk_en_tb;
+reg [3:0]	i_div_ratio_tb; 
+wire			o_div_clk_tb;
 
- Up_Dn_Counter DUT (
-		.IN(IN_tb),
-		.Load(Load_tb),
-		.Up(Up_tb),
-		.Down(Down_tb),
-		.CLK(CLK_tb),
-		.rst(rst_tb),
-		.High(High_tb),
-		.Counter(Counter_tb),
-		.Low(Low_tb)
+ ClkDiv DUT (
+		.i_ref_clk(i_ref_clk_tb),
+		.i_rst_n(i_rst_n_tb),
+		.i_clk_en(i_clk_en_tb),
+		.i_div_ratio(i_div_ratio_tb),
+		.o_div_clk(o_div_clk_tb)
 		);
 
 
@@ -39,7 +34,7 @@ reg			Low_tb;
 /////////////////////////////////////////////////////
 
 initial begin 
-	$dumpfile("Up_Dn_Counter.vcd"); 
+	$dumpfile("ClkDiv.vcd"); 
 	$dumpvars; 
 end 
 
@@ -56,3 +51,4 @@ task reset;
  rst_tb=1;
  end
 endtask
+endmodule

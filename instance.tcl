@@ -1,11 +1,16 @@
+
+
+
+
+
 #USER_Module Name---------------------------------------------------
-set modname "Up_Dn_Counter"
+set modname "TOP_rx"
 
 #USER_Inputs---------------------------------------------------
-set in_ports [list IN Load Up Down CLK rst];
+set in_ports [list RX_IN prescale PAR_EN PAR_TYP clk rst ];
 
 #USER_Outputs---------------------------------------------------
-set out_ports [list High Counter Low];
+set out_ports [list P_DATA data_valid];
 
 
 

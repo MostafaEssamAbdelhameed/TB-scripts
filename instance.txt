@@ -1,11 +1,7 @@
- Up_Dn_Counter DUT (
-		.IN(IN_tb),
-		.Load(Load_tb),
-		.Up(Up_tb),
-		.Down(Down_tb),
-		.CLK(CLK_tb),
-		.rst(rst_tb),
-		.High(High_tb),
-		.Counter(Counter_tb),
-		.Low(Low_tb)
+ ClkDiv DUT (
+		.i_ref_clk(i_ref_clk_tb),
+		.i_rst_n(i_rst_n_tb),
+		.i_clk_en(i_clk_en_tb),
+		.i_div_ratio(i_div_ratio_tb),
+		.o_div_clk(o_div_clk_tb)
 		);
