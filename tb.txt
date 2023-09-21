@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module ClkDiv_tb ();
+module System_Top_tb ();
 
 /////////////////////////////////////////////////////
 //////////////////clk_generator//////////////////////
@@ -14,18 +14,22 @@ always #(clk_period/2) clk_tb = ~clk_tb;
 ///////////////Decleration & Instances///////////////
 /////////////////////////////////////////////////////
 
-reg		i_ref_clk_tb;
-reg		i_rst_n_tb;
-reg		i_clk_en_tb;
-reg [3:0]	i_div_ratio_tb; 
-wire			o_div_clk_tb;
+reg		ref_clk_tb;
+reg		uart_clk_tb;
+reg		rst_tb;
+reg		RX_IN_tb;
+wire			TX_OUT_tb;
+wire			stop_err_tb;
+wire			par_err_tb;
 
- ClkDiv DUT (
-		.i_ref_clk(i_ref_clk_tb),
-		.i_rst_n(i_rst_n_tb),
-		.i_clk_en(i_clk_en_tb),
-		.i_div_ratio(i_div_ratio_tb),
-		.o_div_clk(o_div_clk_tb)
+ ٍSystem_Top DUT (
+		.ref_clk(ref_clk_tb),
+		.uart_clk(uart_clk_tb),
+		.rst(rst_tb),
+		.RX_IN(RX_IN_tb),
+		.TX_OUT(TX_OUT_tb),
+		.stop_err(stop_err_tb),
+		.par_err(par_err_tb)
 		);
 
 
@@ -34,7 +38,7 @@ wire			o_div_clk_tb;
 /////////////////////////////////////////////////////
 
 initial begin 
-	$dumpfile("ClkDiv.vcd"); 
+	$dumpfile("System_Top.vcd"); 
 	$dumpvars; 
 end 
 

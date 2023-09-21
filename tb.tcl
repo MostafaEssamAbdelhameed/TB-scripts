@@ -5,15 +5,15 @@
 
 
 #USER_Module Name---------------------------------------------------
-set modname "ClkDiv"
+set modname "System_Top"
 
 #USER_Inputs---------------------------------------------------
-set in_ports [list RX_IN prescale PAR_EN PAR_TYP clk rst];
-set in_ports_width [list 1 5 1 1 1 1];
+set in_ports [list ref_clk uart_clk rst RX_IN];
+set in_ports_width [list 1 1 1 1];
 
 #USER_Outputs---------------------------------------------------
-set out_ports [list P_DATA data_valid];
-set out_ports_width [list 8 1];
+set out_ports [list TX_OUT stop_err par_err];
+set out_ports_width [list 1 1 1];
 
 
 

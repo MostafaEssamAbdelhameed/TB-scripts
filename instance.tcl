@@ -4,13 +4,13 @@
 
 
 #USER_Module Name---------------------------------------------------
-set modname "TOP_rx"
+set modname "ٍSystem_Top"
 
 #USER_Inputs---------------------------------------------------
-set in_ports [list RX_IN prescale PAR_EN PAR_TYP clk rst ];
+set in_ports [list ref_clk uart_clk rst RX_IN];
 
 #USER_Outputs---------------------------------------------------
-set out_ports [list P_DATA data_valid];
+set out_ports [list TX_OUT stop_err par_err];
 
 
 

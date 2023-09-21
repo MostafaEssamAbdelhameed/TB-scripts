@@ -1,7 +1,9 @@
- ClkDiv DUT (
-		.i_ref_clk(i_ref_clk_tb),
-		.i_rst_n(i_rst_n_tb),
-		.i_clk_en(i_clk_en_tb),
-		.i_div_ratio(i_div_ratio_tb),
-		.o_div_clk(o_div_clk_tb)
+ ٍSystem_Top DUT (
+		.ref_clk(ref_clk_tb),
+		.uart_clk(uart_clk_tb),
+		.rst(rst_tb),
+		.RX_IN(RX_IN_tb),
+		.TX_OUT(TX_OUT_tb),
+		.stop_err(stop_err_tb),
+		.par_err(par_err_tb)
 		);
